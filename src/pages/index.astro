@@ -1,16 +1,27 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import Menu from "../layouts/menu.layout.astro";
+import Button from "../components/Button";
 
+const arr = [1, 2, 3, 4, 5, 6];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<MainLayout title="HomePage">
+  <Menu />
+  <br />
+  <hr />
+
+  <p id="copyright" class="text-3xl text-center bg-slate-500 text-white"></p>
+  <!-- {
+    arr.map((item) => {
+      return <p>{item}</p>;
+    })
+  } -->
+  <p class="h-screen"></p>
+  <p class="h-screen"></p>
+  <Button client:visible />
+</MainLayout>
+
+<script>
+  import "../js/utils";
+</script>
